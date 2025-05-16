@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hertzuly Gadgets - Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header id="header">
+        <!-- Same header as index.html -->
+    </header>
+
+    <div id="mobile-menu" class="mobile-menu">
+        <!-- Same mobile menu as index.html -->
+    </div>
+
+    <main class="container">
+        <section class="cart-page">
+            <h1>Your Shopping Cart</h1>
+            
+            <div class="cart-items-container" id="cart-items-full">
+                <!-- Cart items loaded via JavaScript -->
+            </div>
+
+            <div class="cart-summary">
+                <div class="total-price">
+                    <h3>Total: <span id="full-cart-total">$0.00</span></h3>
+                </div>
+                
+                <div class="cart-actions">
+                    <button class="btn-secondary" onclick="window.location.href='products.html'">
+                        <i class="fas fa-arrow-left"></i> Continue Shopping
+                    </button>
+                    <button class="btn-primary" id="proceed-checkout">
+                        <i class="fas fa-lock"></i> Secure Checkout
+                    </button>
+                </div>
+            </div>
+
+            <div class="checkout-form" id="checkout-form">
+                <h2>Checkout Information</h2>
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Shipping Address</label>
+                        <textarea id="address" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardNumber">Credit Card Number</label>
+                        <input type="text" id="cardNumber" pattern="[0-9]{16}" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-check-circle"></i> Complete Purchase
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
