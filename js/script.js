@@ -102,3 +102,69 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartDisplay();
     renderCart();
 });
+
+// Cart Page Functionality
+function renderFullCart() {
+    const cartContainer = document.getElementById('cart-items-full');
+    const cartTotal = document.getElementById('full-cart-total');
+    
+    if (cart.length === 0) {
+        cartContainer.innerHTML = '<p class="empty-cart">Your cart is currently empty</p>';
+        cartTotal.textContent = '$0.00';
+        return;
+    }
+
+    cartContainer.innerHTML = cart.map(item => `
+        <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+            <div class="cart-item-info">
+                <h3>${item.name}</h3>
+                <p>$${item.price.toFixed(2)}</p>
+                <div class="quantity-controls">
+                    <button class="quantity-btn" data-id="${item.id}" data-action="decrease">-</button>
+                    <span>${item.quantity}</span>
+                    <button class="quantity-btn" data-id="${item.id}" data-action="increase">+</button>
+                </div>
+            </div>
+            <button class="remove-item" data-id="${item.id}">
+                <i class="fas fa-trash"></i>
+            </button>
+        </div>
+    `).join('');
+
+    cartTotal.textContent = `$${calculateCartTotal().toFixed(2)}`;
+}
+
+// Account Page Functionality
+function handleAuthForms() {
+    const tabs = document.querySelectorAll('.auth-tab');
+    const forms = document.querySelectorAll('.auth-form');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const tabId = tab.dataset.tab;
+            tabs.forEach(t => t.classList.remove('active'));
+            forms.forEach(f => f.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(`${tabId}-form`).classList.add('active');
+        });
+    });
+}
+
+// Initialize Page Specific Code
+function initPage() {
+    const path = window.location.pathname;
+    
+    if (path.includes('cart.html')) {
+        renderFullCart();
+    }
+    
+    if (path.includes('account.html')) {
+        handleAuthForms();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Existing code...
+    initPage();
+});
