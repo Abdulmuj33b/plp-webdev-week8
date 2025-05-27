@@ -1,134 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hertzuly Gadgets - Tech Innovation</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <header id="header">
-        <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">Hertzuly</a>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="products.html" class="nav-link"><i class="fas fa-box-open"></i> Products</a></li>
-                    <li><a href="#featured" class="nav-link"><i class="fas fa-star"></i> Featured</a></li>
-                    <li><a href="account.html" class="nav-link"><i class="fas fa-user"></i> Account</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hertzuly - Toys, Gear & Accessories</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/fav-icon/android-chrome-512x512.png"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header id="main-header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="index.html">
+              <span class="logo-icon"
+                ><img src="./assets/fav-icon/icons8-smartphones-50.png" alt=""
+              /></span>
+              <span class="logo-text">Hertzuly</span>
+            </a>
+          </div>
+
+          <nav class="desktop-nav">
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="./pages/products.html">Products</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle"
+                  >Categories <i class="fas fa-chevron-down"></i
+                ></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="./pages/products.html?category=phones"
+                      >Smartphones & Accessories</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/products.html?category=computers"
+                      >Laptops & Computers</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/products.html?category=smartdevice"
+                      >Smart Home & IoT</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/products.html?category=wearable"
+                      >Wearable Tech</a
+                    >
+                  </li>
                 </ul>
-            </nav>
-            <div class="header-actions">
-                <button id="cart-toggle" aria-label="Cart">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span id="cart-count" class="cart-count">0</span>
-                </button>
-                <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header-actions">
+            <div class="search-container">
+              <button class="search-toggle" id="search-toggle">
+                <i class="fas fa-search"></i>
+              </button>
+              <div class="search-form" id="search-form">
+                <form action="./pages/products.html" method="get">
+                  <input
+                    type="text"
+                    name="search"
+                    placeholder="Search for gadgets..."
+                  />
+                  <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+              </div>
             </div>
+
+            <a href="./pages/wishlist.html" class="wishlist-icon">
+              <i class="fas fa-heart"></i>
+              <span class="wishlist-count" id="wishlist-count">0</span>
+            </a>
+
+            <a href="./pages/cart.html" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count" id="cart-count">0</span>
+            </a>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
         </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="./pages/products.html">Products</a></li>
+            <li class="mobile-dropdown">
+              <a href="#" class="mobile-dropdown-toggle"
+                >Categories <i class="fas fa-chevron-down"></i
+              ></a>
+              <ul class="mobile-dropdown-menu">
+                <li>
+                  <a href="./pages/products.html?category=phones"
+                    >Smartphones & Accessories</a
+                  >
+                </li>
+                <li>
+                  <a href="./pages/products.html?category=computers"
+                    >Laptops & Computers</a
+                  >
+                </li>
+                <li>
+                  <a href="./pages/products.html?category=smartdevice"
+                    >Smart Home & IoT</a
+                  >
+                </li>
+                <li>
+                  <a href="./pages/products.html?category=wearable"
+                    >Wearable Tech</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="./pages/wishlist.html">Wishlist</a></li>
+          </ul>
+          <div class="mobile-search">
+            <form action="./pages/products.html" method="get">
+              <input
+                type="text"
+                name="search"
+                placeholder="Search products..."
+              />
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <div id="mobile-menu" class="mobile-menu">
-        <div class="mobile-menu-header">
-            <div class="logo">Hertzuly</div>
-            <button id="close-menu" aria-label="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <nav>
-            <ul class="mobile-nav-links">
-                <li><a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="products.html" class="mobile-nav-link"><i class="fas fa-box-open"></i> Products</a></li>
-                <li><a href="#featured" class="mobile-nav-link"><i class="fas fa-star"></i> Featured</a></li>
-                <li><a href="account.html" class="mobile-nav-link"><i class="fas fa-user"></i> Account</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div id="cart-sidebar" class="cart-sidebar">
-        <div class="cart-header">
-            <h2>Your Cart</h2>
-            <button id="close-cart" aria-label="Close cart">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div id="cart-items" class="cart-items"></div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cart-total-price">$0.00</span>
-            </div>
-            <button id="checkout-btn" class="btn-primary">
-                <i class="fas fa-credit-card"></i>
-                <span>Checkout</span>
-            </button>
-        </div>
-    </div>
-
     <main>
-        <section class="hero">
-            <video autoplay muted loop class="hero-video">
-                <source src="videos/promo.mp4" type="video/mp4">
-            </video>
-            <div class="hero-content container">
-                <h1>Next-Gen Tech Innovation</h1>
-                <p>Discover cutting-edge gadgets for tomorrow's world</p>
-                <a href="products.html" class="btn-primary">Shop Now</a>
-            </div>
-        </section>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Experience Cutting-Edge Tech</h1>
+          <p>
+            Explore the latest gadgets, from sleek smartphones to powerful
+            gaming gear.
+          </p>
+          <div class="hero-buttons">
+            <a href="./pages/products.html" class="btn btn-primary">Shop Now</a>
+            <a
+              href="./pages/products.html?category=new"
+              class="btn btn-secondary"
+              >New Arrivals</a
+            >
+          </div>
+        </div>
+      </section>
 
-        <section class="container" id="featured">
-            <h2>Featured Tech</h2>
-            <div class="products-grid" id="featured-products"></div>
-        </section>
+      <!-- Featured Categories -->
+      <section class="featured-categories">
+        <div class="container">
+          <h2 class="section-title">Shop by Category</h2>
+          <div class="categories-grid">
+            <a
+              href="./pages/products.html?category=phones"
+              class="category-card"
+            >
+              <div class="category-img">
+                <img
+                  src="https://www.gadgetcare.co.nz/assets/img/blog/mobile-accessories.jpg"
+                  alt="Smartphones & Accessories"
+                />
+              </div>
+              <h3>Smartphones & Accessories</h3>
+            </a>
+            <a
+              href="./pages/products.html?category=computers"
+              class="category-card"
+            >
+              <div class="category-img">
+                <img
+                  src="https://5.imimg.com/data5/WW/EW/MY-15612685/used-laptops-and-desktop.png"
+                  alt="Laptops & Computers"
+                />
+              </div>
+              <h3>Laptops & Computers</h3>
+            </a>
+            <a
+              href="./pages/products.html?category=smartdevice"
+              class="category-card"
+            >
+              <div class="category-img">
+                <img
+                  src="https://www.edn.com/wp-content/uploads/Fig-1-matter-connectivity-TI.jpg?resize=950%2C534"
+                  alt="Smart Home"
+                />
+              </div>
+              <h3>Smart Home & IoT</h3>
+            </a>
+            <a
+              href="./pages/products.html?category=wearable"
+              class="category-card"
+            >
+              <div class="category-img">
+                <img
+                  src="https://www.ketchum.com/wp-content/uploads/2014/05/tumblr_mu4xnwuglm1qij315o1_1280.jpg"
+                  alt="Wearable Tech"
+                />
+              </div>
+              <h3>Wearable Tech</h3>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Products -->
+      <section class="featured-products">
+        <div class="container">
+          <h2 class="section-title">Featured Products</h2>
+          <div class="products-grid" id="featured-products">
+            <!-- Products will be loaded via JavaScript -->
+            <div class="loading-spinner">
+              <div class="spinner"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- New Arrivals -->
+      <section class="new-arrivals">
+        <div class="container">
+          <h2 class="section-title">New Arrivals</h2>
+          <div class="products-grid" id="new-arrivals">
+            <!-- Products will be loaded via JavaScript -->
+            <div class="loading-spinner">
+              <div class="spinner"></div>
+            </div>
+          </div>
+          <div class="view-all-container">
+            <a href="./pages/products.html?isNew=true" class="btn btn-outline"
+              >View All New Arrivals</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Sale Banner -->
+      <section class="sale-banner">
+        <div class="sale-content">
+          <h2>⚡ Tech Flash Sale ⚡</h2>
+          <p>Up to 50% off on premium headphones, smartwatches & drones</p>
+          <a href="./pages/products.html?onSale=true" class="btn btn-accent"
+            >Shop Deals</a
+          >
+        </div>
+      </section>
+
+      <!-- Special Offers -->
+      <section class="special-offers">
+        <div class="container">
+          <h2 class="section-title">Tech Perks</h2>
+          <div class="offers-grid">
+            <div class="offer-card">
+              <div class="offer-img">
+                <img
+                  src="./assets/special-offers-img/free-shipping.jpg"
+                  alt="Free Shipping"
+                />
+              </div>
+              <div class="offer-content">
+                <h3>Free Express Shipping</h3>
+                <p>On orders over $99 | 2-3 day delivery</p>
+              </div>
+            </div>
+            <div class="offer-card">
+              <div class="offer-img">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0938/1396/files/PREMIUM_540x.png?v=1733783523"
+                  alt="Birthday Club"
+                />
+              </div>
+              <div class="offer-content">
+                <h3>Premium Tech Bundles</h3>
+                <p>Save 15% on curated gadget sets</p>
+              </div>
+            </div>
+            <div class="offer-card">
+              <div class="offer-img">
+                <img
+                  src="https://media.istockphoto.com/id/1419630013/vector/3d-style-golden-color-2-year-warranty-badge-icon-isolated-on-white-background-vector.jpg?s=612x612&w=0&k=20&c=TPaBjs7py81jVtUW2pn1M216dgrM-b_D9hQ6b4nlw_M="
+                  alt="Reward Points"
+                />
+              </div>
+              <div class="offer-content">
+                <h3>2-Year Warranty</h3>
+                <p>Free extended coverage on all devices</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="newsletter">
+        <div class="container">
+          <div class="newsletter-content">
+            <h2>Join the Tech Inner Circle</h2>
+            <p>
+              Get exclusive early access to new gadgets, flash deals, and tech
+              tips straight to your inbox.
+            </p>
+            <form id="newsletter-form" class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit" class="btn btn-primary">Get Updates</button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Shop</h3>
-                    <ul>
-                        <li><a href="products.html?category=gadget"><i class="fas fa-mobile-alt"></i> Gadgets</a></li>
-                        <li><a href="products.html?category=accessory"><i class="fas fa-headphones"></i> Accessories</a></li>
-                        <li><a href="products.html?category=device"><i class="fas fa-laptop"></i> Devices</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-shipping-fast"></i> Shipping</a></li>
-                        <li><a href="#"><i class="fas fa-undo"></i> Returns</a></li>
-                        <li><a href="#"><i class="fas fa-phone"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-building"></i> About</a></li>
-                        <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
-                        <li><a href="#"><i class="fas fa-briefcase"></i> Careers</a></li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Hertzuly</h3>
+            <p>
+              Your gateway to cutting-edge technology. We deliver premium
+              gadgets, expert reviews, and unbeatable tech deals straight to
+              your doorstep.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Hertzuly Gadgets. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="./pages/products.html">Shop</a></li>
+              <li>
+                <a href="./pages/products.html?category=new">New Arrivals</a>
+              </li>
+              <li><a href="./pages/products.html?onSale=true">Sale</a></li>
+              <li><a href="./pages/wishlist.html">Wishlist</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Returns & Exchanges</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 14 Chapel Avenue, Tanke.
+                Ilorin
+              </li>
+              <li><i class="fas fa-phone"></i>+2348030768106</li>
+              <li><i class="fas fa-envelope"></i> info@hertzuly.com</li>
+            </ul>
+            <div class="store-hours">
+              <h4>Store Hours:</h4>
+              <p>Mon-Sat: 9AM - 8PM</p>
+              <p>Sunday: 10AM - 6PM</p>
             </div>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year"></span> Hertzuly. All rights
+            reserved.
+          </p>
+          <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
-    <script src="js/script.js"></script>
-</body>
+    <script src="./js/main.js"></script>
+    <script src="./js/home.js"></script>
+  </body>
 </html>
